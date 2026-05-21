@@ -56,7 +56,7 @@ export const TOPICS: Topic[] = [
       "The black rectangle on a board is mostly packaging. The part that computes is a sliver of silicon in the middle. Drag to rotate; toggle layers to peel it apart.",
     kicker: "silicon",
     tag: "interactive · 3D",
-    accent: "--amber",
+    accent: "--violet",
     status: "live",
     takeaway:
       "When people say 'the chip,' they usually mean the package — but the die inside is often smaller than a fingernail, and its functional blocks (cores, cache, memory controller, I/O) are laid out like districts in a city. Cache takes up a huge fraction of die area on a modern CPU — which loops right back to topic 01.",

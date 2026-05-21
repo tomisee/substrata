@@ -232,7 +232,7 @@ const css = `
 .cache .stats{display:flex;gap:20px;margin-bottom:16px;}
 .cache .stat{flex:1;}
 .cache .stat .v{font-size:26px;font-weight:700;}
-.cache .stat .v.hit{color:var(--neon);text-shadow:var(--glow) var(--neon);}
+.cache .stat .v.hit{color:var(--green);text-shadow:var(--glow) var(--green);}
 .cache .stat .v.miss{color:var(--magenta);}
 .cache .stat .v.rate{color:var(--cyan);}
 .cache .stat .l{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);}
@@ -250,9 +250,9 @@ const css = `
 .cache .cline .vt{color:var(--dim);}
 .cache .cline .data{height:6px;border-radius:2px;background:var(--line);}
 .cache .cline.filled .data{background:var(--amber);opacity:.45;}
-.cache .cline.fhit{background:rgba(43,255,154,0.16);border-color:var(--neon);}
+.cache .cline.fhit{background:rgba(43,255,154,0.14);border-color:var(--green);}
 .cache .cline.fmiss{background:rgba(255,77,141,0.14);border-color:var(--magenta);}
 .cache .log{margin-top:14px;font-size:11px;max-height:96px;overflow-y:auto;color:var(--dim);}
-.cache .log .hit{color:var(--neon);}
+.cache .log .hit{color:var(--green);}
 .cache .log .miss{color:var(--magenta);}
 `;
