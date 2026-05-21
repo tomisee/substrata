@@ -1,8 +1,9 @@
 # substrata
 
-**Interactive systems explainers** — a living portfolio of working models for low-level computing concepts. Each topic is something you can *poke at*, not just read: a real simulation or 3D model, built to demonstrate genuine understanding of the layer beneath the one most people work in.
+**Interactive systems explainers**
+A showapedia of computer science (and cybersecurity) topics that are best shown with a diagram or simulation. These give users an opportunity to see *how* different variables can affect performance or operation. For example, how the different cache block sizes affect hit/miss rates.
 
-The project is built around a deliberate constraint: to add a topic, you have to understand the concept well enough to **simulate it correctly**. You can't fake a working model. That makes the repo a portfolio piece and a personal learning loop at the same time.
+This project is built around one fundamental idea - **to add a topic and simulation, I need to understand it**. To understand it, I need to research it thoroughly. This leads to an effective development feedback loop which will only improve my own personal ability.
 
 ## Stack
 
@@ -25,9 +26,8 @@ npm run dev      # http://localhost:3000
 1. Push this repo to GitHub.
 2. In Vercel, **Add New → Project**, import the repo.
 3. Framework preset auto-detects as **Next.js**. No env vars needed.
-4. Deploy. Every push to `main` redeploys automatically.
-
-(Or from the CLI: `npm i -g vercel && vercel`.)
+4. Deploy. Every push to `main` will be a public facing deployment
+     i. If pushing to an alternative branch - ie `testing`, this will start a pre-prod deployment instance for testing purposes.
 
 ## How to add a new topic  ← the important part
 
@@ -55,8 +55,6 @@ import TcpHandshake from "@/components/TcpHandshake";
 }
 ```
 
-**3. There is no step 3.** The index card, the route at `/topics/tcp-handshake`, the metadata, and the static-params build all derive from that single entry. A `"planned"` status renders a greyed-out "coming soon" card with no link; flipping it to `"live"` (with a `Component`) turns it on.
-
 ## Project layout
 
 ```
@@ -78,7 +76,7 @@ The cache simulator implements a real direct-mapped cache (address → tag/index
 
 ## Roadmap / homework
 
-- [ ] TCP handshake (registry entry already stubbed as `planned`)
+- [x] TCP handshake (registry entry already stubbed as `planned`)
 - [ ] Floating-point rounding visualizer
 - [ ] The stack frame during a function call
 - [ ] Animate the chip layers sliding apart on toggle
