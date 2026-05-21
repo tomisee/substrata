@@ -1,0 +1,26 @@
+{
+  "name": "substrata",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Interactive systems explainers — a living portfolio of working models for low-level concepts.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@react-three/drei": "^9.108.3",
+    "@react-three/fiber": "^8.16.8",
+    "next": "^14.2.35",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "three": "^0.166.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.10",
+    "@types/react": "^18.3.3",
+    "@types/three": "^0.166.0",
+    "typescript": "^5.5.3"
+  }
+}
