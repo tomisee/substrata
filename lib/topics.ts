@@ -28,6 +28,7 @@ export interface Topic {
 
 import CacheSim from "@/components/CacheSim";
 import ChipModel from "@/components/ChipModel";
+import TcpHandshake from "@/components/TcpHandshake";
 
 export const TOPICS: Topic[] = [
   {
@@ -68,12 +69,15 @@ export const TOPICS: Topic[] = [
     title: "The TCP handshake",
     blurb:
       "Step through SYN / SYN-ACK / ACK and watch sequence numbers and connection state transition on both ends.",
-    lede: "",
+    lede:
+      "Two hosts, three packets, one agreed state. Drag a client and server onto the canvas, then step through the handshake and watch sequence numbers and TCP state evolve on both sides.",
     kicker: "networking",
-    tag: "planned",
+    tag: "interactive · 2D",
     accent: "--cyan",
-    status: "planned",
-    takeaway: "",
+    status: "live",
+    takeaway:
+      "The handshake establishes shared state before a single byte of data flows: both sides exchange and acknowledge initial sequence numbers (ISNs), proving the channel is bidirectional. ISNs are randomised to prevent collisions with stale packets from old connections — after the handshake, each side tracks the other's position in the byte stream using these numbers.",
+    Component: TcpHandshake,
   },
 ];
 
