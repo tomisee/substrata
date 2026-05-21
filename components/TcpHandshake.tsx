@@ -246,7 +246,7 @@ export default function TcpHandshake() {
 
   return (
     <div className="tcp">
-      <style>{css}</style>
+      <style dangerouslySetInnerHTML={{ __html: css }} />
 
       <div className="panel">
         <div className="panel-bar mono">
@@ -493,7 +493,7 @@ const css = `
 .tcp .dev-name{font-size:10px;color:var(--dim);letter-spacing:.1em;text-transform:uppercase;}
 .tcp .dev-state{font-size:9px;letter-spacing:.04em;white-space:nowrap;margin-top:1px;}
 
-.tcp .established-badge{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);font-size:11px;color:var(--green);letter-spacing:.1em;background:rgba(0,0,0,0.5);padding:5px 14px;border-radius:4px;border:1px solid var(--green);white-space:nowrap;text-shadow:var(--glow) var(--green);pointer-events:none;}
+.tcp .established-badge{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);font-size:11px;color:var(--green);letter-spacing:.1em;background:var(--surface-2);padding:5px 14px;border-radius:4px;border:1px solid var(--green);white-space:nowrap;text-shadow:var(--glow) var(--green);pointer-events:none;}
 
 /* ── Packet log ── */
 .tcp .pkt-log{border-top:1px solid var(--line);padding:10px 14px;background:var(--surface);}
