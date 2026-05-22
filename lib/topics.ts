@@ -29,6 +29,7 @@ export interface Topic {
 import CacheSim from "@/components/CacheSim";
 import ChipModel from "@/components/ChipModel";
 import TcpHandshake from "@/components/TcpHandshake";
+import GoFetch from "@/components/GoFetch";
 
 export const TOPICS: Topic[] = [
   {
@@ -78,6 +79,22 @@ export const TOPICS: Topic[] = [
     takeaway:
       "The handshake establishes shared state before a single byte of data flows: both sides exchange and acknowledge initial sequence numbers (ISNs), proving the channel is bidirectional. ISNs are randomised to prevent collisions with stale packets from old connections — after the handshake, each side tracks the other's position in the byte stream using these numbers.",
     Component: TcpHandshake,
+  },
+  {
+    slug: "gofetch-attack",
+    index: "04",
+    title: "The GoFetch attack",
+    blurb:
+      "Watch a DMP side-channel strip key bits from a victim process one probe at a time. Prime the cache, craft the input, time the access — the hardware does the rest.",
+    lede:
+      "Apple M-series chips have a Data Memory-dependent Prefetcher that watches data values, not just access patterns. Feed it the right inputs and it leaks your secrets into shared cache lines — no kernel code, no speculative execution needed.",
+    kicker: "hardware security",
+    tag: "interactive · 2D",
+    accent: "--magenta",
+    status: "live",
+    takeaway:
+      "GoFetch shows why 'constant-time' code is no longer a sufficient defence: even if your code takes the same execution path regardless of secret values, the hardware may still broadcast those values through the cache. The DMP observes data values, not just addresses — if an intermediate result looks like a pointer, the prefetcher fetches it. Mitigations require either CPU-level changes (disabled DMP via special register, only available to certain processes) or algorithmic blinding so that intermediate values never fall into the pointer range.",
+    Component: GoFetch,
   },
 ];
 
