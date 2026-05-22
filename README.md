@@ -77,7 +77,9 @@ The cache simulator implements a real direct-mapped cache (address → tag/index
 ## Roadmap / homework
 
 - [x] TCP handshake (registry entry already stubbed as `planned`)
-- [ ] Floating-point rounding visualizer
-- [ ] The stack frame during a function call
-- [ ] Animate the chip layers sliding apart on toggle
-- [ ] More accurate die proportions / flip-chip bump layout
+- [x] Replace chip with the M1 silicon chip
+- [x] Improve functionality of the 3D chip model, including UI
+- [x] Introduce an initial side-channel attack (possibly GoFetch)
+- [ ] Improve user experience and styling
+- [ ] Add a flow of data simulation to accompany the side-channel attack simulation to aid understanding
+- [ ] Add some other cyber/computer science topics - encryption, ARP poisoning, ping flood etc 
