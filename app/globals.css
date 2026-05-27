@@ -72,7 +72,10 @@ body {
   overflow-x: hidden;
 }
 
-/* CRT scanline + vignette overlay, fixed over everything */
+/* CRT scanline + vignette overlay, fixed over everything.
+   Calmed from earlier values so the texture supports the content
+   without competing with the simulations. Topic pages dial it lower
+   still (see `body:has(.topic-page)` rules below). */
 body::before {
   content: '';
   position: fixed; inset: 0;
@@ -82,18 +85,22 @@ body::before {
       to bottom,
       rgba(0,0,0,0) 0px,
       rgba(0,0,0,0) 2px,
-      rgba(0,0,0,0.18) 3px,
+      rgba(0,0,0,0.14) 3px,
       rgba(0,0,0,0) 4px
     );
   mix-blend-mode: multiply;
-  opacity: 0.5;
+  opacity: 0.25;
 }
 body::after {
   content: '';
   position: fixed; inset: 0;
   pointer-events: none; z-index: 9998;
-  background: radial-gradient(ellipse at center, transparent 55%, rgba(0,0,0,0.55) 100%);
+  background: radial-gradient(ellipse at center, transparent 60%, rgba(0,0,0,0.4) 100%);
 }
+
+/* On topic pages, defer further — the interactive model is the content. */
+body:has(.topic-page)::before { opacity: 0.1; }
+body:has(.topic-page)::after  { opacity: 0.6; }
 
 .mono { font-family: var(--mono); }
 .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
@@ -118,8 +125,9 @@ a { color: var(--cyan); text-decoration: none; }
 }
 
 /* lighten CRT scanline overlay in light mode */
-[data-theme="light"] body::before { opacity: 0.15; }
-[data-theme="light"] body::after  { opacity: 0.35; }
+[data-theme="light"] body::before { opacity: 0.08; }
+[data-theme="light"] body::after  { opacity: 0.3; }
+[data-theme="light"] body:has(.topic-page)::before { opacity: 0.04; }
 .site-header .wrap { display: flex; align-items: center; justify-content: space-between; height: 58px; }
 .logo { font-family: var(--mono); font-weight: 800; font-size: 17px; letter-spacing: -0.02em; display: flex; align-items: center; gap: 9px; }
 .logo .blink { color: var(--neon); animation: blink 1.1s steps(2) infinite; text-shadow: var(--glow) var(--neon); }
@@ -145,3 +153,26 @@ a { color: var(--cyan); text-decoration: none; }
 
 .kicker { font-family: var(--mono); font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--neon); }
 .glow-text { text-shadow: var(--glow) currentColor; }
+
+/* ---------- accessibility: visible keyboard focus ----------
+   A single, high-contrast focus ring for keyboard users only —
+   mouse hover still uses the per-element hover styles above. */
+:focus { outline: none; }
+:focus-visible {
+  outline: 2px solid var(--neon);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+.card:focus-visible,
+a:focus-visible .card { outline-offset: 4px; }
+
+/* ---------- accessibility: motion preferences ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+  .logo .blink { animation: none; opacity: 1; }
+  .card:hover { transform: none; }
+}

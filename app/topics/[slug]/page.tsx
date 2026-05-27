@@ -18,7 +18,7 @@ export default function TopicPage({ params }: { params: { slug: string } }) {
   const { Component } = topic;
 
   return (
-    <main className="wrap" style={{ paddingTop: 48, paddingBottom: 64 }}>
+    <main className="wrap topic-page" style={{ paddingTop: 48, paddingBottom: 64 }}>
       <Link href="/#index" className="mono" style={{ fontSize: 13, color: "var(--dim)" }}>
         ← all topics
       </Link>
