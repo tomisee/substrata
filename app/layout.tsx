@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import ThemeToggle from "@/components/ThemeToggle";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -37,6 +38,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             stack: <code>Next.js</code> · <code>react-three-fiber</code> · <code>TypeScript</code> — deploy on <code>Vercel</code>
           </div>
         </footer>
+        <Analytics />
       </body>
     </html>
   );
