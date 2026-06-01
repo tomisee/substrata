@@ -22,8 +22,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <header className="site-header">
           <div className="wrap">
             <Link href="/" className="logo">
-              {/* Replace public/logo.svg with the real wordmark when ready */}
-              <img src="/logo.svg" alt="substrata" height={20} style={{ display: "block" }} />
+              <img src="/logo.png" alt="substrata" height={20} style={{ display: "block" }} />
             </Link>
             <nav className="site-nav">
               <Link href="/#index">topics</Link>
