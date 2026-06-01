@@ -94,11 +94,13 @@ export default function HeroPreview() {
         .hp-rate b { color: var(--green); font-weight: 600; font-variant-numeric: tabular-nums; }
         .hp-stream {
           display: grid;
-          grid-template-columns: repeat(${STREAM_LEN}, 1fr);
+          grid-template-columns: repeat(${STREAM_LEN}, minmax(0, 1fr));
           gap: 4px;
         }
         .hp-slot {
           height: 44px;
+          min-width: 0;
+          overflow: hidden;
           border-radius: 3px;
           display: flex; flex-direction: column; justify-content: center; align-items: center;
           font-size: 9px; line-height: 1.1;
