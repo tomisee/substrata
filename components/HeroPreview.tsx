@@ -14,7 +14,7 @@ type Slot = { addr: number; hit: boolean };
 
 const LINES = 4;
 const BLOCK = 16;
-const STREAM_LEN = 14;
+const STREAM_LEN = 10;
 
 function nextAddr(prev: number) {
   // Sequential walk that wraps, with one deliberate stride jump every 12 steps
