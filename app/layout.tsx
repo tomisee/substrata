@@ -27,7 +27,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <nav className="site-nav">
               <Link href="/#index">topics</Link>
               <Link href="/#about">about</Link>
-              <a href="https://github.com" target="_blank" rel="noreferrer">source</a>
+              <a href="https://github.com/tomisee/substrata" target="_blank" rel="noreferrer">source</a>
               <ThemeToggle />
             </nav>
           </div>
