@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 152 22" fill="none">
+  <!-- Placeholder wordmark — replace this file with the real asset when ready.
+       Uses amber (#ffb02b) so it's legible on both dark and light backgrounds. -->
+  <text
+    x="0" y="17"
+    font-family="'JetBrains Mono', monospace"
+    font-size="17"
+    font-weight="800"
+    letter-spacing="-0.3"
+    fill="#ffb02b"
+  >substrata_</text>
+</svg>

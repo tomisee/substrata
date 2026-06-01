@@ -96,6 +96,36 @@ export const TOPICS: Topic[] = [
       "GoFetch shows why 'constant-time' code is no longer a sufficient defence: even if your code takes the same execution path regardless of secret values, the hardware may still broadcast those values through the cache. The DMP observes data values, not just addresses — if an intermediate result looks like a pointer, the prefetcher fetches it. Mitigations require either CPU-level changes (disabled DMP via special register, only available to certain processes) or algorithmic blinding so that intermediate values never fall into the pointer range.",
     Component: GoFetch,
   },
+  {
+    slug: "stack-frame",
+    index: "05",
+    title: "The stack frame",
+    blurb:
+      "Watch the call stack grow and shrink. See how the CPU tracks return addresses, local variables, and saved registers across function calls.",
+    lede:
+      "Every function call allocates a frame on the stack. Step through a call sequence and watch the stack pointer, base pointer, and saved registers move in real time.",
+    kicker: "execution model",
+    tag: "interactive · 2D",
+    accent: "--amber",
+    status: "planned",
+    takeaway:
+      "The stack is the data structure that makes recursive functions possible — and the one that makes buffer overflows dangerous. Understanding the frame layout is the prerequisite for reading crash dumps, writing debuggers, and reasoning about exploit mitigations like stack canaries and ASLR.",
+  },
+  {
+    slug: "float-rounding",
+    index: "06",
+    title: "Floating-point rounding",
+    blurb:
+      "Why does 0.1 + 0.2 ≠ 0.3? Step through IEEE 754 representation and see exactly which bits get rounded and why.",
+    lede:
+      "Floating-point numbers can't represent most decimals exactly. Dial in a value, watch it snap to the nearest representable float, and see the rounding error accumulate across operations.",
+    kicker: "numeric representation",
+    tag: "interactive · 2D",
+    accent: "--violet",
+    status: "planned",
+    takeaway:
+      "Floating-point errors aren't random noise — they're deterministic consequences of representing infinite real numbers in 64 bits. The same representable-number lattice that explains 0.1 + 0.2 also explains why summation order matters in numerical algorithms and why financial software avoids floats entirely.",
+  },
 ];
 
 export function getTopic(slug: string): Topic | undefined {
