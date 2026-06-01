@@ -33,6 +33,6 @@ lib/
 - [x] Replace chip with the M1 silicon chip
 - [x] Improve functionality of the 3D chip model, including UI
 - [x] Introduce an initial side-channel attack (possibly GoFetch)
-- [ ] Improve user experience and styling
+- [x] Improve user experience and styling
 - [ ] Add a flow of data simulation to accompany the side-channel attack simulation to aid understanding
 - [ ] Add some other cyber/computer science topics - encryption, ARP poisoning, ping flood etc 
